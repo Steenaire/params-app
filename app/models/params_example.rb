@@ -1,0 +1,2 @@
+class ParamsExample < ApplicationRecord
+end
