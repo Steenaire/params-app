@@ -1,4 +1,5 @@
 class ParamsExamplesController < ApplicationController
+
   def query_parameters
     puts "params taken and outputted below"
     @name = params[:name].upcase
@@ -22,7 +23,10 @@ class ParamsExamplesController < ApplicationController
       @win_note = "Higher!"
     elsif @number < @guess
       @win_note = "Lower!"
-    end
-      
+    end 
+
+    
+
   end
+
 end
