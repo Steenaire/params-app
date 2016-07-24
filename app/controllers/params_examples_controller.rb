@@ -28,7 +28,25 @@ class ParamsExamplesController < ApplicationController
   end
 
   def url_segment_parameters
-    @message = params[:message]
+    @guess = params[:guess].to_i
+    number = File.open("public/number_game.txt").first.strip.to_i
+
+    if number == @guess
+      file = File.open("public/number_game.txt", 'w')
+      file.write("#{rand(100)}")
+      file.close
+      @win_note = "You guessed it!"
+    elsif number > @guess
+      @win_note = "Higher!"
+    elsif number < @guess
+      @win_note = "Lower!"
+    end 
+
+  end
+
+  def secret_number
+    @display_local = params[:local_number]
+    @number = File.open("#{@display_local}.txt").first.strip
   end
 
 end
