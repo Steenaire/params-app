@@ -1,0 +1,18 @@
+<!-- <form action="action_page.php">
+  First name:<br>
+  <input type="text" name="firstname" value="Mickey"><br>
+  Last name:<br>
+  <input type="text" name="lastname" value="Mouse"><br><br>
+  <input type="submit" value="Submit">
+</form> -->
+
+<%= form_tag '/form_result', method: :post do %>
+  <div>
+    <%= label_tag :message %>
+    <%= text_field_tag :message %>
+  </div>
+  <div>
+    <%= submit_tag "Send" %>
+  </div>
+
+<% end %>

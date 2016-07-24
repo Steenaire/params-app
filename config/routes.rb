@@ -10,4 +10,8 @@ Rails.application.routes.draw do
 
   get 'secret_number/*local_number', to: 'params_examples#secret_number'
 
+  #Form parameters examples
+  get '/form_display', to:  'params_examples#form_display'
+  post '/form_result', to: 'params_examples#form_result'
+
 end

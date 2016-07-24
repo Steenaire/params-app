@@ -1,5 +1,6 @@
 class ParamsExamplesController < ApplicationController
 
+  #Query parameters action:
   def query_parameters
     puts "params taken and outputted below"
     @name = params[:name].upcase
@@ -24,9 +25,9 @@ class ParamsExamplesController < ApplicationController
     elsif @number < @guess
       @win_note = "Lower!"
     end 
-
   end
 
+  #URL Segment Parameters action:
   def url_segment_parameters
     @guess = params[:guess].to_i
     number = File.open("public/number_game.txt").first.strip.to_i
@@ -44,9 +45,18 @@ class ParamsExamplesController < ApplicationController
 
   end
 
+  #Route globbing action:
   def secret_number
     @display_local = params[:local_number]
     @number = File.open("#{@display_local}.txt").first.strip
+  end
+
+  #Form parameters actions:
+  def form_display
+  end
+
+  def form_result
+    @message = params[:message]
   end
 
 end
