@@ -25,8 +25,10 @@ class ParamsExamplesController < ApplicationController
       @win_note = "Lower!"
     end 
 
-    
+  end
 
+  def url_segment_parameters
+    @message = params[:message]
   end
 
 end
