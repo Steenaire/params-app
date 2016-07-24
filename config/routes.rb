@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   get '/form_display', to:  'params_examples#form_display'
   post '/form_result', to: 'params_examples#form_result'
 
+  get '/add_contact', to: 'params_examples#add_contact'
+  post '/display_contact', to: 'params_examples#display_contact'
+
 end

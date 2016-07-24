@@ -56,7 +56,28 @@ class ParamsExamplesController < ApplicationController
   end
 
   def form_result
-    @message = params[:message]
+    @guess = params[:guess].to_i
+    number = File.open("public/number_game.txt").first.strip.to_i
+
+    if number == @guess
+      file = File.open("public/number_game.txt", 'w')
+      file.write("#{rand(100)}")
+      file.close
+      @message = "You guessed it!"
+    elsif number > @guess
+      @message = "Higher!"
+    elsif number < @guess
+      @message = "Lower!"
+    end 
+  end
+
+  def add_contact
+  end
+
+  def display_contact
+    @name = params[:name]
+    @email = params[:email]
+    @phone_number = params[:phone_number]
   end
 
 end

@@ -8,11 +8,11 @@
 
 <%= form_tag '/form_result', method: :post do %>
   <div>
-    <%= label_tag :message %>
-    <%= text_field_tag :message %>
+    <%= label_tag :guess, "Guess a number between 1 and 100:" %>
+    <%= text_field_tag :guess %>
   </div>
   <div>
-    <%= submit_tag "Send" %>
+    <%= submit_tag "Submit Guess" %>
   </div>
 
 <% end %>
